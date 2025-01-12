@@ -30,6 +30,7 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
     let balance = loanAmount;
     let totalPrincipalPaid = 0;
     let totalInterestPaid = 0;
+    let last_month_zero = false;
     const data = [];
     const useMonthlyScale = payoffTime <= 12;
 
@@ -50,8 +51,11 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
         totalPrincipalPaid += principalPayment;
         totalInterestPaid += interestPayment;
       } else {
-        totalPrincipalPaid = 0;
-        totalInterestPaid = 0;
+        if (last_month_zero) {
+          totalPrincipalPaid = 0;
+          totalInterestPaid = 0;
+        }
+        last_month_zero = true;
       }
 
       // Add data point based on scale
