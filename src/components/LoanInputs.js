@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoanInputs.css';
-import ReactGA from 'react-ga';
+import { trackEvent } from '../analytics';
 
 const LoanInputs = (props) => {
   const [termInputValue, setTermInputValue] = useState('');
@@ -41,10 +41,11 @@ const LoanInputs = (props) => {
 
   const handleUpdateTerm = () => {
     // Track the button click event
-    ReactGA.event({
+    trackEvent('button_click', {
       category: 'User',
       action: 'Updated Loan Term',
       label: `New Term: ${pendingTerm}`,
+      vallue: 1,
     });
 
     if (pendingTerm === '') {

@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import ReactGA from 'react-ga';
+import usePageTracking from './usePageTracking';
 import LoanInfo from './components/LoanInfo';
 import LoanInputs from './components/LoanInputs';
 import LoanChart from './components/LoanChart';
@@ -15,10 +15,10 @@ const App = () => {
   const [totalMonthlyPayment, setTotalMonthlyPayment] = useState(0);
 
   useEffect(() => {
-    ReactGA.initialize('G-HGSEM1GYC7');
-    // Track the initial page view
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    initGA();
   }, []);
+
+  usePageTracking();
 
   // Add validation to setLoanAmount
   const handleSetLoanAmount = (value) => {
