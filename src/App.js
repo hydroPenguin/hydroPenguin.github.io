@@ -4,6 +4,7 @@ import usePageTracking from './usePageTracking';
 import LoanInfo from './components/LoanInfo';
 import LoanInputs from './components/LoanInputs';
 import LoanChart from './components/LoanChart';
+import { initGA } from './analytics';
 import './App.css';
 
 const App = () => {
