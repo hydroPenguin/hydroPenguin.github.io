@@ -47,7 +47,7 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
       const principalPayment = monthlyPayment - interestPayment;
       
       balance = Math.max(0, balance - principalPayment);
-      if (balance != 0) {
+      if (balance !== 0) {
         totalPrincipalPaid += principalPayment;
         totalInterestPaid += interestPayment;
       } else {
