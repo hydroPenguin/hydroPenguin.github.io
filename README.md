@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Freedom Path 🌟
 
 A responsive personal portfolio website built with React and deployed on GitHub Pages.
 
@@ -13,6 +13,9 @@ Visit the live website: [hydropenguin.github.io](https://hydropenguin.github.io)
 - CSS3
 - JavaScript (ES6+)
 - GitHub Pages
+
+## Built With
+This project was developed using [Cursor](https://cursor.sh/), a powerful AI-first code editor.
 
 ## 🏗️ Installation
 

@@ -131,3 +131,11 @@
     color: #ecf0f1;
   }
 }
+
+.principal {
+  fill: #4ECDC4;  /* Warm teal */
+}
+
+.interest {
+  fill: #FFD384;  /* Warm golden yellow */
+}

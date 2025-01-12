@@ -121,8 +121,8 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
               type="monotone" 
               dataKey="principalPaid" 
               stackId="1"
-              stroke="#82ca9d"
-              fill="#82ca9d"
+              stroke="#4ECDC4"
+              fill="#4ECDC4"
               fillOpacity={0.6}
               name="Principal Paid"
             />
@@ -130,8 +130,8 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
               type="monotone" 
               dataKey="totalInterest" 
               stackId="1"
-              stroke="#ff7f50"
-              fill="#ff7f50"
+              stroke="#FFD384"
+              fill="#FFD384"
               fillOpacity={0.6}
               name="Total Interest"
             />

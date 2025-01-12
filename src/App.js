@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Debt Be Gone! 💸✨</h1>
+      <h1>Freedom Path 🌟</h1>
       <LoanInputs
         loanAmount={loanAmount}
         interestRate={interestRate}
