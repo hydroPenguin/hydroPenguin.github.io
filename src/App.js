@@ -15,6 +15,7 @@ const App = () => {
   const [totalMonthlyPayment, setTotalMonthlyPayment] = useState(0);
 
   useEffect(() => {
+    ReactGA.initialize('G-HGSEM1GYC7');
     // Track the initial page view
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
