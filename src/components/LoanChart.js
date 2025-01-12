@@ -46,8 +46,13 @@ const LoanChart = ({ loanAmount, interestRate, monthlyPayment, payoffTime }) => 
       const principalPayment = monthlyPayment - interestPayment;
       
       balance = Math.max(0, balance - principalPayment);
-      totalPrincipalPaid += principalPayment;
-      totalInterestPaid += interestPayment;
+      if (balance != 0) {
+        totalPrincipalPaid += principalPayment;
+        totalInterestPaid += interestPayment;
+      } else {
+        totalPrincipalPaid = 0;
+        totalInterestPaid = 0;
+      }
 
       // Add data point based on scale
       if (useMonthlyScale || month % 12 === 0 || month === payoffTime) {
