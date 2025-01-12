@@ -1,0 +1,133 @@
+.chart-container {
+  border-radius: 12px;
+  padding: clamp(20px, 3vw, 40px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  transition: background-color 0.3s ease;
+}
+
+.chart-container h3 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+}
+
+.chart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.chart-item {
+  width: 100%;
+}
+
+.chart-item h4 {
+  margin-bottom: 20px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.recharts-tooltip-wrapper {
+  z-index: 10;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chart-container {
+    background-color: #2c3e50;
+  }
+  
+  .chart-container h3,
+  .chart-item h4 {
+    color: #ecf0f1;
+  }
+  
+  .chart-item {
+    background-color: #34495e;
+  }
+  
+  .recharts-cartesian-grid line {
+    stroke: rgba(255, 255, 255, 0.1);
+  }
+  
+  .recharts-text {
+    fill: #ecf0f1;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+  }
+}
+
+/* Ensure consistent box-sizing */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.custom-tooltip {
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tooltip-header {
+  font-weight: bold;
+  color: #2c3e50;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tooltip-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.tooltip-label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.tooltip-value {
+  font-weight: 600;
+}
+
+/* Dark mode support for tooltip */
+@media (prefers-color-scheme: dark) {
+  .custom-tooltip {
+    background-color: rgba(44, 62, 80, 0.95);
+    border-color: #34495e;
+  }
+
+  .tooltip-header {
+    color: #ecf0f1;
+    border-bottom-color: #34495e;
+  }
+
+  .tooltip-item {
+    color: #ecf0f1;
+  }
+}

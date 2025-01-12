@@ -1,0 +1,195 @@
+.loan-inputs {
+  background-color: white;
+  border-radius: 12px;
+  padding: clamp(20px, 3vw, 40px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.input-groups-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px; /* Space for potential scrollbar */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  min-width: 200px; /* Minimum width for each input */
+  max-width: 300px; /* Maximum width for each input */
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.input-group input {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.readonly-input {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  cursor: not-allowed;
+}
+
+.input-hint {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Scrollbar styling */
+.input-groups-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.input-groups-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.input-groups-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.input-groups-container::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .loan-inputs {
+    background-color: #2c3e50;
+  }
+  
+  .input-group label {
+    color: #ecf0f1;
+  }
+  
+  .input-group input {
+    background-color: #34495e;
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+  }
+  
+  .readonly-input {
+    background-color: #2c3e50;
+  }
+  
+  .input-hint {
+    color: #bdc3c7;
+  }
+
+  .input-groups-container::-webkit-scrollbar-track {
+    background: #34495e;
+  }
+
+  .input-groups-container::-webkit-scrollbar-thumb {
+    background: #7f8c8d;
+  }
+
+  .input-groups-container::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .input-groups-container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .loan-inputs {
+    padding: 15px;
+  }
+  
+  .input-group {
+    min-width: 180px;
+  }
+  
+  .input-group input {
+    padding: 6px 10px;
+  }
+}
+
+/* High-DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .loan-inputs {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.term-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.term-input-container input {
+  flex: 1;
+}
+
+.update-term-btn {
+  padding: 8px 16px;
+  background: #60a5fa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.update-term-btn:hover {
+  background: #3b82f6;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.update-term-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .update-term-btn {
+    background: #3b82f6;
+  }
+  
+  .update-term-btn:hover {
+    background: #2563eb;
+  }
+} 
