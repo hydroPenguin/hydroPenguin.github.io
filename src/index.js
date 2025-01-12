@@ -4,7 +4,7 @@ import App from './App';
 import ReactGA from 'react-ga';
 
 // Initialize Google Analytics with the tracking ID from the environment variable
-ReactGA.initialize(G-HGSEM1GYC7);
+ReactGA.initialize('G-HGSEM1GYC7');
 
 // Log page views
 const logPageView = () => {
