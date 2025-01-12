@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './LoanInputs.css';
+import ReactGA from 'react-ga';
 
 const LoanInputs = (props) => {
   const [termInputValue, setTermInputValue] = useState('');
@@ -16,7 +17,6 @@ const LoanInputs = (props) => {
     setInterestRate,
     setPayoffTime, 
     handleAdditionalPaymentChange,
-    minPayment
   } = props;
 
   const evaluateExpression = (expr) => {
@@ -40,6 +40,13 @@ const LoanInputs = (props) => {
   };
 
   const handleUpdateTerm = () => {
+    // Track the button click event
+    ReactGA.event({
+      category: 'User',
+      action: 'Updated Loan Term',
+      label: `New Term: ${pendingTerm}`,
+    });
+
     if (pendingTerm === '') {
       setShowUpdateButton(false);
       return;

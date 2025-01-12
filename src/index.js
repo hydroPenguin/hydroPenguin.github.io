@@ -1,23 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css';
 import ReactGA from 'react-ga';
 
-// Initialize Google Analytics with the tracking ID from the environment variable
-ReactGA.initialize('G-HGSEM1GYC7');
+// Initialize Google Analytics with your tracking ID
+ReactGA.initialize('G-HGSEM1GYC7'); // Replace with your actual tracking ID
 
-// Log page views
-const logPageView = () => {
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
-};
-
-// Call logPageView on every route change
-logPageView();
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <React.StrictMode>
         <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
