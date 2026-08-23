@@ -41,9 +41,13 @@
   color: #94a3b8;
 }
 
-.inspect-top h3 {
+.inspect-top h3,
+.inspect-gen {
   margin: 0.15rem 0 0;
   font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .inspect-close {
@@ -69,6 +73,64 @@
   color: #cbd5e1;
 }
 
+.gene-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.inspect-help {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(94, 234, 212, 0.4);
+  color: #5eead4;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+  flex-shrink: 0;
+}
+
+.inspect-help-mark {
+  transform: translateY(0.5px);
+}
+
+.inspect-tooltip {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: min(210px, 68vw);
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  background: rgba(2, 6, 14, 0.95);
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.inspect-help:hover .inspect-tooltip,
+.inspect-help:focus .inspect-tooltip,
+.inspect-help:focus-visible .inspect-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .gene-track {
   height: 6px;
   border-radius: 999px;
@@ -89,6 +151,12 @@
   margin-top: 0.7rem;
   font-size: 0.75rem;
   color: #94a3b8;
+}
+
+.footer-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 @media (max-width: 720px) {

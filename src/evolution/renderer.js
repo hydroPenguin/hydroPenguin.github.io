@@ -19,6 +19,11 @@ export class CanvasRenderer {
     this.height = 1;
     this.dpr = 1;
     this.fx = [];
+    this.camera = { zoom: 1, panX: 0, panY: 0 };
+  }
+
+  setCamera(camera) {
+    this.camera = camera;
   }
 
   resize(cssWidth, cssHeight) {
@@ -30,7 +35,23 @@ export class CanvasRenderer {
     this.canvas.height = Math.floor(this.height * dpr);
     this.canvas.style.width = `${this.width}px`;
     this.canvas.style.height = `${this.height}px`;
-    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  applyScreenTransform() {
+    const { ctx, dpr } = this;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  applyWorldTransform() {
+    const { ctx, dpr, camera } = this;
+    ctx.setTransform(
+      dpr * camera.zoom,
+      0,
+      0,
+      dpr * camera.zoom,
+      dpr * camera.panX,
+      dpr * camera.panY
+    );
   }
 
   addEvents(events) {
@@ -63,6 +84,7 @@ export class CanvasRenderer {
 
   clear() {
     const { ctx, width, height } = this;
+    this.applyScreenTransform();
     ctx.fillStyle = WORLD_BG;
     ctx.fillRect(0, 0, width, height);
 
@@ -204,6 +226,7 @@ export class CanvasRenderer {
 
   drawVignette() {
     const { ctx, width, height } = this;
+    this.applyScreenTransform();
     const g = ctx.createRadialGradient(
       width / 2,
       height / 2,
@@ -220,6 +243,7 @@ export class CanvasRenderer {
 
   render(engine) {
     this.clear();
+    this.applyWorldTransform();
     this.drawFood(engine.food);
     this.drawTrails(engine.creatures);
     this.drawCreatures(engine.creatures, engine.selectedId, engine.hoverId);

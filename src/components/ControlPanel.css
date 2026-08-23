@@ -83,6 +83,20 @@
   border-color: rgba(94, 234, 212, 0.45);
 }
 
+.zoom-block {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+  color: #cbd5e1;
+  font-size: 0.86rem;
+}
+
+.zoom-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.45rem;
+}
+
 .control-field {
   display: grid;
   gap: 0.35rem;

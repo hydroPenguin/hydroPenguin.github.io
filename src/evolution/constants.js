@@ -28,3 +28,7 @@ export const EAT_PADDING = 2;
 export const WORLD_BG = '#0b1220';
 export const FOOD_COLOR = '#7dffb3';
 export const ACCENT = '#5eead4';
+
+export const ZOOM_MIN = 0.55;
+export const ZOOM_MAX = 3.5;
+export const ZOOM_STEP = 1.15;

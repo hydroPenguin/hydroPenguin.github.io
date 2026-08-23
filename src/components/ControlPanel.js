@@ -9,6 +9,7 @@ const SLIDER_HELP = {
     'How quickly new food appears in the world. More food supports larger populations.',
   startingPopulation:
     'Number of creatures created on Reset. Does not change the live run until you reset.',
+  zoom: 'Zoom the camera. Scroll wheel or pinch also works. Right-drag to pan.',
 };
 
 const ControlField = ({ label, help, children }) => (
@@ -32,10 +33,14 @@ const ControlPanel = ({
   params,
   paused,
   dockOpen,
+  zoom = 1,
   onToggleDock,
   onTogglePause,
   onReset,
   onParamChange,
+  onZoomIn,
+  onZoomOut,
+  onResetView,
 }) => {
   return (
     <aside className={`control-dock ${dockOpen ? 'is-open' : ''}`}>
@@ -61,6 +66,31 @@ const ControlPanel = ({
           <button type="button" className="btn" onClick={onReset}>
             Reset
           </button>
+        </div>
+
+        <div className="zoom-block">
+          <span className="control-label">
+            Zoom {(zoom * 100).toFixed(0)}%
+            <span className="control-help" tabIndex={0} aria-label={SLIDER_HELP.zoom}>
+              <span className="control-help-mark" aria-hidden="true">
+                ?
+              </span>
+              <span className="control-tooltip" role="tooltip">
+                {SLIDER_HELP.zoom}
+              </span>
+            </span>
+          </span>
+          <div className="zoom-actions">
+            <button type="button" className="btn" onClick={onZoomOut} aria-label="Zoom out">
+              −
+            </button>
+            <button type="button" className="btn" onClick={onResetView} aria-label="Reset view">
+              1x
+            </button>
+            <button type="button" className="btn" onClick={onZoomIn} aria-label="Zoom in">
+              +
+            </button>
+          </div>
         </div>
 
         <ControlField
@@ -128,7 +158,7 @@ const ControlPanel = ({
         </ControlField>
 
         <p className="dock-hint">
-          Click to spawn. Drag to sprinkle food. Tap a creature to inspect.
+          Click to spawn. Drag to feed. Scroll/pinch to zoom. Right-drag to pan.
         </p>
       </div>
     </aside>
