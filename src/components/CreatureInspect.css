@@ -1,0 +1,104 @@
+.inspect-panel {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  width: min(260px, calc(100vw - 2rem));
+  padding: 0.95rem 1rem 1rem;
+  border-radius: 16px;
+  background: rgba(11, 18, 32, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+  color: #e2e8f0;
+  animation: inspect-in 220ms ease;
+}
+
+@keyframes inspect-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inspect-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.inspect-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.inspect-top h3 {
+  margin: 0.15rem 0 0;
+  font-size: 1.2rem;
+}
+
+.inspect-close {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: transparent;
+  color: #cbd5e1;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.gene-row {
+  margin-bottom: 0.55rem;
+}
+
+.gene-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: #cbd5e1;
+}
+
+.gene-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.9);
+  overflow: hidden;
+}
+
+.gene-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #14b8a6, #5eead4);
+}
+
+.inspect-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 720px) {
+  .inspect-panel {
+    left: 0.75rem;
+    bottom: auto;
+    top: auto;
+    right: 0.75rem;
+    width: auto;
+    position: absolute;
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}

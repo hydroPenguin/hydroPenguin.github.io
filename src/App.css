@@ -1,91 +1,35 @@
-.app {
-  min-height: 100vh;
-  padding: 20px;
-  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #02060e;
+  color: #e2e8f0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.app h1 {
-  text-align: center;
-  color: white;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  animation: floatTitle 3s ease-in-out infinite;
+.world-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20, 184, 166, 0.12), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(56, 189, 248, 0.08), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes floatTitle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  touch-action: none;
+  cursor: crosshair;
 }
 
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .app {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  }
-
-  .app h1 {
-    color: #e2e8f0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-  .app {
-    padding: 15px;
-  }
-}
-
-.calculator-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 20px;
+.world-canvas {
+  display: block;
   width: 100%;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-@media screen and (max-width: 480px) {
-  .app {
-    padding: 10px;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .app {
-    padding: 15px;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .app {
-    padding: 20px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .app {
-    padding: 30px;
-  }
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  height: 100%;
 }

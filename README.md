@@ -1,24 +1,31 @@
-# Freedom Path 🌟
+# Evolution Lab
 
-A responsive personal portfolio website built with React and deployed on GitHub Pages.
+Interactive 2D creature evolution simulator — eat, mutate, reproduce — hosted on GitHub Pages.
 
-## 🚀 Live Demo
+**Live:** [hydropenguin.github.io](https://hydropenguin.github.io)
 
-Visit the live website: [hydropenguin.github.io](https://hydropenguin.github.io)
+## Play
 
-## 🛠️ Built With
+- Click empty space to spawn a creature
+- Drag to sprinkle food
+- Click a creature to inspect genes
+- Tweak mutation, food rate, speed, and starting population
 
-- React.js
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- GitHub Pages
+## Stack
 
-## Built With
-This project was developed using [Cursor](https://cursor.sh/), a powerful AI-first code editor.
+- React 18 (Create React App)
+- Canvas 2D simulation + Recharts sparkline
+- Deployed with `gh-pages`
 
-## 🏗️ Installation
+## Local
 
-To run this project locally:
+```bash
+npm install
+npm start
+```
 
-1. Clone the repository
+## Deploy
+
+```bash
+npm run deploy
+```
