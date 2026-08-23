@@ -1,27 +1,30 @@
-# Evolution Lab
+# Flight Sim
 
-Interactive 2D creature evolution simulator — eat, mutate, reproduce — hosted on GitHub Pages.
+Browser flight simulation — runway, takeoff, fly, land — hosted on GitHub Pages.
 
 **Live:** [hydropenguin.github.io](https://hydropenguin.github.io)
 
-## Play
+## Controls
 
-- Click empty space to spawn a creature
-- Drag to sprinkle food
-- Click a creature to inspect genes
-- Tweak mutation, food rate, speed, and starting population
+| Key | Action |
+|-----|--------|
+| `W` / `S` | Throttle up / down |
+| `↑` / `↓` | Pitch |
+| `←` / `→` | Roll |
+| `R` | Reset to runway |
+| Any key | Dismiss start screen |
 
 ## Stack
 
-- React 18 (Create React App)
-- Canvas 2D simulation + Recharts sparkline
+- Vite + Three.js
+- Rapier (WASM) rigid body + custom aero forces
 - Deployed with `gh-pages`
 
 ## Local
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Deploy

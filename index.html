@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6ba3c9" />
+    <title>Flight Sim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Barlow+Condensed:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+      <div id="hud" class="hud" hidden>
+        <div class="hud-row"><span>IAS</span><span id="hud-speed">0</span><span>kt</span></div>
+        <div class="hud-row"><span>ALT</span><span id="hud-alt">0</span><span>ft</span></div>
+        <div class="hud-row"><span>THR</span><span id="hud-thr">0</span><span>%</span></div>
+      </div>
+      <div id="overlay" class="overlay">
+        <div class="overlay-inner">
+          <h1>Flight Sim</h1>
+          <p class="tagline">Runway · takeoff · fly · land</p>
+          <ul class="controls">
+            <li><kbd>W</kbd> / <kbd>S</kbd> throttle</li>
+            <li><kbd>↑</kbd> / <kbd>↓</kbd> pitch</li>
+            <li><kbd>←</kbd> / <kbd>→</kbd> roll</li>
+            <li><kbd>R</kbd> reset</li>
+          </ul>
+          <p class="prompt">Press any key to start</p>
+        </div>
+      </div>
+      <div id="banner" class="banner" hidden></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
