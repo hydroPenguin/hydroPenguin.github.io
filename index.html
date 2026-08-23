@@ -1,1 +1,41 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Evolution Lab — interactive 2D creature evolution simulator"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Evolution Lab</title><script defer="defer" src="/static/js/main.e821e482.js"></script><link href="/static/css/main.4b251488.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6ba3c9" />
+    <title>Flight Sim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Barlow+Condensed:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-DVVvCQ6J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BKT_AuTS.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+      <div id="hud" class="hud" hidden>
+        <div class="hud-row"><span>IAS</span><span id="hud-speed">0</span><span>kt</span></div>
+        <div class="hud-row"><span>ALT</span><span id="hud-alt">0</span><span>ft</span></div>
+        <div class="hud-row"><span>THR</span><span id="hud-thr">0</span><span>%</span></div>
+      </div>
+      <div id="overlay" class="overlay">
+        <div class="overlay-inner">
+          <h1>Flight Sim</h1>
+          <p class="tagline">Runway · takeoff · fly · land</p>
+          <ul class="controls">
+            <li><kbd>W</kbd> / <kbd>S</kbd> throttle</li>
+            <li><kbd>↑</kbd> / <kbd>↓</kbd> pitch</li>
+            <li><kbd>←</kbd> / <kbd>→</kbd> roll</li>
+            <li><kbd>R</kbd> reset</li>
+          </ul>
+          <p class="prompt">Press any key to start</p>
+        </div>
+      </div>
+      <div id="banner" class="banner" hidden></div>
+    </div>
+  </body>
+</html>
